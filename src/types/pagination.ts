@@ -1,5 +1,6 @@
 export interface PaginationInterface {
-  totalPages: number;
-  currentPage: number;
+  total: number;
+  perPage: number;
+  currentPage?: number;
   onPageChange: (page: number) => void;
 }

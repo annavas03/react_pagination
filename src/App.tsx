@@ -11,8 +11,6 @@ export const App: React.FC = () => {
   const [perPage, setPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(items.length / perPage);
-
   const startIdx = (currentPage - 1) * perPage;
   const endIdx = startIdx + perPage;
   const visibleItems = items.slice(startIdx, endIdx);
@@ -42,7 +40,8 @@ export const App: React.FC = () => {
       </div>
 
       <Pagination
-        totalPages={totalPages}
+        total={items.length}
+        perPage={perPage}
         currentPage={currentPage}
         onPageChange={setCurrentPage}
       />
